@@ -1,0 +1,129 @@
+<div class="custom-popup">
+    <div class="popup-content">
+        <!-- pop up header -->
+        <fieldset>
+            <form [formGroup]="userForm" (ngSubmit)="saveInterviewQuestionAnswer()">
+                <div class="popupHeader">
+                    <h2>Enter Student Enquiry</h2>
+                </div>
+                <!-- pop up content -->
+
+                <!-- error messages -->
+                <div class="common-error-message">
+                    {{ commonErrorMessage }}
+                </div>
+                <div class="contact-error-message common-error-message"
+                    *ngIf="userForm.get('Contact')?.hasError('pattern')">
+                    *Please, Enter 10 digit Mobile Number!
+                </div>
+                <div class="email-error-message common-error-message"
+                    *ngIf="userForm.get('Email')?.hasError('pattern')">
+                    *Please enter a valid email address!
+                </div>
+                <div class="qualification-error-message common-error-message"
+                    *ngIf="userForm.get('Qualification')?.hasError('invalidQualification') && userForm.get('Qualification')?.touched">
+                    *Select qualification from provided list!
+                </div>
+                <div class="qualification-error-message common-error-message"
+                    *ngIf="userForm.get('Qualification')?.hasError('invalidQualification') && userForm.get('Qualification')?.touched">
+                    <!-- No validation message here -->
+                </div>
+                <div class="photo-error-message common-error-message" *ngIf="photoFieldBlurred && !selectedImage">
+                    *Photo is required!
+                </div>
+
+                <div class="popupContent col-12">
+                    <div class="col-md-6 popupContentLt">
+                        <div class="col-md-4 popupContentLt-Lt">
+                            <label for="Fname" class="col-form-label labelName">Fname :</label>
+                            <label for="Mname" class="col-form-label labelName">Mname :</label>
+                            <label for="Lname" class="col-form-label labelName">Lname :</label>
+                            <label for="Contact" class="col-form-label labelName">Contact :</label>
+                            <label for="Email" class="col-form-label labelName">Email :</label>
+                            <label for="Address" class="col-form-label labelName">Address :</label>
+                            <label for="Required Course" class="col-form-label labelName">Required Course :</label>
+                            <label for="Qualification" class="col-form-label labelName">Qualification :</label>
+
+                        </div>
+                        <div class="col-md-8 popupContentLt-Rt">
+                            <input id="username" name="Fname" formControlName="Fname" (blur)="blurEventHandler($event)"
+                                placeholder="Enter Fname" type="text" class="form-control">
+                            <input id="username" name="Mname" formControlName="Mname" (blur)="blurEventHandler($event)"
+                                placeholder="Enter Mname" type="text" class="form-control">
+                            <input id="username" name="Lname" formControlName="Lname" (blur)="blurEventHandler($event)"
+                                placeholder="Enter Lname" type="text" class="form-control">
+                            <input id="username" name="Contact" formControlName="Contact"
+                                (blur)="blurEventHandler($event)" placeholder="9666666666" type="text"
+                                class="form-control">
+                            <input id="username" name="Email" formControlName="Email" (blur)="blurEventHandler($event)"
+                                placeholder="Enter Email" type="text" class="form-control">
+                            <input id="username" name="Address" formControlName="Address"
+                                (blur)="blurEventHandler($event)" placeholder="Enter Address" type="text"
+                                class="form-control">
+
+                            <input id="username" name="RequiredCourse" formControlName="RequiredCourse"
+                                (blur)="blurEventHandler($event)" placeholder="Enter Required Course" type="text"
+                                class="form-control">
+
+                            <input type="text" id="username" (blur)="blurEventHandler($event)"
+                                formControlName="Qualification" [(ngModel)]="selectedEducation"
+                                [ngbTypeahead]="searchEducation" placeholder="Type to search for education..."
+                                class="form-control">
+
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-6 popupContentRt">
+                        <div class="col-md-4 popupContentLt-Lt">
+                            <label for="Location" class="col-form-label labelName">Required Location :</label>
+                            <label for="E.id" class="col-form-label labelName">E.id :</label>
+                            <label for="Score" class="col-form-label labelName">Test Score :</label>
+                            <label for="Reference" class="col-form-label labelName">Reference :</label>
+                            <label for="C.name" class="col-form-label labelName">C.name :</label>
+                            <label for="Gender" class="col-form-label labelName">Gender :</label>
+                            <label for="Date" class="col-form-label labelName">Date :</label>
+                            <label for="Photo" class="col-form-label labelName">Photo :</label>
+                            <label for="Photof" class="col-form-label labelName"></label>
+                        </div>
+                        <div class="col-md-8 popupContentLt-Rt">
+
+                            <input id="username" name="Location" formControlName="Location"
+                                (blur)="blurEventHandler($event)" placeholder="Enter Location" type="text"
+                                class="form-control">
+                            <input id="username" name="Eid" formControlName="Eid" (blur)="blurEventHandler($event)"
+                                placeholder="Enter E.id" type="text" class="form-control">
+                            <input id="username" name="TestScore" formControlName="TestScore"
+                                (blur)="blurEventHandler($event)" placeholder="Enter Test Score" type="text"
+                                class="form-control">
+                            <input id="username" name="Reference" formControlName="Reference"
+                                (blur)="blurEventHandler($event)" placeholder="Enter Reference" type="text"
+                                class="form-control">
+                            <input id="username" name="Cname" formControlName="Cname" (blur)="blurEventHandler($event)"
+                                placeholder="Enter C.name" type="text" class="form-control">
+
+                            <input type="text" id="username" (blur)="blurEventHandler($event)" formControlName="Gender"
+                                [(ngModel)]="selectedItem" [ngbTypeahead]="search"
+                                placeholder="Type to search for gender..." class="form-control">
+                            <input id="username" name="Date" formControlName="Date" type="date" class="form-control">
+                            <input id="username" name="file" formControlName="Photo" type="file"
+                                class="form-control photoS" (change)="onFileSelected($event)"
+                                (blur)="onPhotoFieldBlur()" [class.invalid-input]="photoFieldBlurred && !selectedImage">
+                            <img class="imageSelected" [src]="selectedImage" *ngIf="selectedImage" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mybuttons">
+                    <div class="col-md-3 col-4">
+                        <button name="submit" type="submit" class="btn btn-primary btn-full-width">Submit</button>
+                    </div>
+                    <div class=" col-md-3  col-4">
+                        <button name="submit" (click)="closeAddEditPopup()" type="submit"
+                            class="btn btn-danger btn-full-width">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</div>

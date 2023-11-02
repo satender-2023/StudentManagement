@@ -1,0 +1,133 @@
+<div class="container-fluid">
+    <div class="sub-container">
+        <div class="searchCriteria">
+            <p class="Criteria"> <span class="">
+                    <i class="fa fa-address-book boxicon" aria-hidden="true"></i></span>&nbsp;
+                <span class="">Add Student Enquiry </span>
+            </p>
+        </div>
+        <div class=""></div>
+        <div class="popupcontainer">
+            <div class=" AddArticle ">
+                <div class="col-12 addStudent">
+                    <button class="btn add-questions-btn hand-cursor" (click)="openPopup()"><i class="fa fa-plus" style="color:#007bff;" aria-hidden="true"></i> Add Student
+                        Enquiry</button>
+                </div>
+                <div class="col-12">
+                    <app-studentenquiry-popup [editedItem]="editedItem" (popupEvent)="closePopup($event)"
+                        *ngIf="showPopup"></app-studentenquiry-popup>
+                </div>
+            </div>
+        </div>
+        <div class="searchCriteria">
+            <p class="Criteria"> <span class="">
+                    <i class="fa fa-address-book boxicon" aria-hidden="true"></i></span>&nbsp;
+                <span class="">Student Enquiry </span>
+            </p>
+        </div>
+        <div class="dataTable">
+
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+                <thead class="thead">
+                    <tr>
+                        <th (click)="disableSorting($event)"> S/No </th>
+                        <th> fname </th>
+                        <th> mname </th>
+                        <th> lname </th>
+                        <th> Contact </th>
+                        <th> Email </th>
+                        <th> Address </th>
+                        <th> Qualification </th>
+                        <th> Required course </th>
+                        <th> Required location </th>
+                        <th> eid </th>
+                        <th> Test Score </th>
+                        <th> Reference </th>
+                        <th> cname </th>
+                        <th> Gender </th>
+                        <th> Date </th>
+                        <th> photo </th>
+                        <th> Edit </th>
+                        <th> Delete </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="">E125</a> </td>
+                        <td>CC123</td>
+                        <td> Agency A </td>
+                        <td> Active </td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td> Agency A </td>
+                        <td> Active </td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td> Agency A </td>
+                        <td> Active </td>
+                        <td>2023-01-15</td>
+                        <td>2023-01-15</td>
+                        <td><i class="fa fa-pencil-square-o editicon" aria-hidden="true"></i>
+                        </td>
+                        <td><i class="fa fa-trash-o editicon" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="">E145</a> </td>
+                        <td>CC123</td>
+                        <td> Agency b </td>
+                        <td> Active </td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td> Agency d </td>
+                        <td> Active </td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td> Agency c </td>
+                        <td> Active </td>
+                        <td>2023-01-15</td>
+                        <td>2023-01-15</td>
+                        <td><i class="fa fa-pencil-square-o editicon" aria-hidden="true"></i>
+                        </td>
+                        <td><i class="fa fa-trash-o editicon" aria-hidden="true"></i></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="">E121</a> </td>
+                        <td>CC123</td>
+                        <td> Agency d </td>
+                        <td> Active </td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td> Agency s </td>
+                        <td> Active </td>
+                        <td><a href="">E12345</a> </td>
+                        <td>CC123</td>
+                        <td> Agency 4 </td>
+                        <td> Active </td>
+                        <td>2023-01-15</td>
+                        <td>2023-01-15</td>
+                        <td><i class="fa fa-pencil-square-o editicon" aria-hidden="true"></i>
+                        </td>
+                        <td><i class="fa fa-trash-o editicon" aria-hidden="true"></i></td>
+                    </tr>
+
+
+
+                    <!-- Add more rows as needed with different data -->
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+    </div>
+</div>

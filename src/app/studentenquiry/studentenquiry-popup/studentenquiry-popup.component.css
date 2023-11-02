@@ -1,0 +1,106 @@
+.custom-popup {
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: solid 1px gainsboro;
+    box-shadow: 2px 2px 2px #dcdcdc;
+    border-radius: 10px;
+    color: black;
+}
+
+.popup-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.mybuttons {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupHeader {
+    margin-top: -10px;
+    color: #007bff;
+    border-bottom: 1px solid black;
+}
+
+.popupContent {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.popupContentLt {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid red; */
+}
+
+.popupContentRt {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid green; */
+}
+
+.popupContentLt-Lt {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.popupContentLt-Rt {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelName {
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+#username {
+    margin-bottom: 8px;
+}
+
+.popupMainCont {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.invalid-input {
+    border: 2px solid red;
+}
+
+.common-error-message {
+    font-weight: 500;
+    color: red;
+}
+
+.chooseImg {
+    width: 100px;
+    height: 80px;
+    margin: 6px;
+    border: 1px solid red;
+}
+
+.imageSelected {
+    width: 160px;
+    height: 190px;
+}
+
+.Qualificationa {
+    width: 100% !important;
+    transition: none;
+}
+
+.dropdown-menu.show {
+    width: 93% !important;
+}
+
+.photoS {
+    height: 46px;
+}
